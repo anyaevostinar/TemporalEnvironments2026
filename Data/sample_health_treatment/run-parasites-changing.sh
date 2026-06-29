@@ -28,7 +28,7 @@ cd ${SLURM_ARRAY_TASK_ID}
 
 cp /Accounts/caldwelll/TemporalEnvironments2026/Data/26_6_29/SymSettings.cfg .
 cp /Accounts/caldwelll/TemporalEnvironments2026/Data/26_6_29/flat-reward-1-env.json .
-cp /Accounts/caldwelll/TemporalEnvironments2026/parasites_changing/symbulation_sgp .
+cp /Accounts/caldwelll/TemporalEnvironments2026/Data/26_6_29/parasites_changing/symbulation_sgp .
 
 ## THIS IS AN EXAMPLE, UPDATE TO CORRECT THINGS
 args=" -START_MOI 1 -FILE_NAME _YOUR_TREAMENT"
