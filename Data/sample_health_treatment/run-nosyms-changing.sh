@@ -29,7 +29,7 @@ cd ${SLURM_ARRAY_TASK_ID}
 cp /Accounts/YOUR_USERNAME/YOUR_GIT_REPO/Data/TODAY_DATE_YOUR_EXPERIMENT_FOLDER/SymSettings.cfg .
 cp /Accounts/YOUR_USERNAME/YOUR_GIT_REPO/SymbulationEmp/symbulation_sgp .
 
-args=" -START_MOI 0 -FILE_NAME _YOUR_TREAMENT -ENABLE_TEMP_CHANGING_ENVIRONMENT true -TEMP_CHANGING_ORG_TYPE plastic-both"
+args=" -START_MOI 0 -ENABLE_TEMP_CHANGING_ENVIRONMENT true -TEMP_CHANGING_ORG_TYPE plastic-both"
 ./symbulation_sgp $args -SEED ${SLURM_ARRAY_TASK_ID} > run.log
 
 ## Run with sbatch -p facultynode --nodelist=edmonstone2024,margulis2024,carver,lederberg run-nosyms-changing.sh
