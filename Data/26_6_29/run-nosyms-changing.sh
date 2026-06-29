@@ -12,22 +12,23 @@
 #SBATCH -o n0%A_%a.out
 
 ## Memory requirement in megabytes. You might need to make this bigger.
-#SBATCH --mem-per-cpu=500M
+#SBATCH --mem-per-cpu=1000M
 
 ## Launch an array of jobs. This determines your random seeds
 #SBATCH --array=100-129
 
 #SBATCH --nodes=1
 
-cd /Accounts/YOUR_USERNAME/YOUR_GIT_REPO/Data/TODAY_DATE_YOUR_EXPERIMENT_FOLDER
-mkdir YOUR_TREATMENT_NAME
-cd YOUR_TREATMENT_NAME
+cd /Accounts/caldwelll/TemporalEnvironments2026/Data/26_6_29
+mkdir run_nosyms
+cd run_nosyms
 
 mkdir ${SLURM_ARRAY_TASK_ID}
 cd ${SLURM_ARRAY_TASK_ID}
 
-cp /Accounts/YOUR_USERNAME/YOUR_GIT_REPO/Data/TODAY_DATE_YOUR_EXPERIMENT_FOLDER/SymSettings.cfg .
-cp /Accounts/YOUR_USERNAME/YOUR_GIT_REPO/SymbulationEmp/symbulation_sgp .
+cp /Accounts/caldwelll/TemporalEnvironments2026/Data/26_6_29/SymSettings.cfg .
+cp /Accounts/caldwelll/TemporalEnvironments2026/Data/26_6_29/flat-reward-1-env.json .
+cp /Accounts/caldwelll/TemporalEnvironments2026/SymbulationEmp/symbulation_sgp .
 
 args=" -START_MOI 0 -ENABLE_TEMP_CHANGING_ENVIRONMENT true -TEMP_CHANGING_ORG_TYPE plastic-both"
 ./symbulation_sgp $args -SEED ${SLURM_ARRAY_TASK_ID} > run.log
