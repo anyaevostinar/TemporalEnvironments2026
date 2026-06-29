@@ -8,8 +8,8 @@
 #SBATCH --mail-user=does_not_work@carleton.edu
 
 ## Job name settings (These do matter, so UPDATE THEM)
-#SBATCH --job-name=npc
-#SBATCH -o npc%A_%a.out
+#SBATCH --job-name=npp
+#SBATCH -o npp%A_%a.out
 
 ## Memory requirement in megabytes. You might need to make this bigger.
 #SBATCH --mem-per-cpu=1000M
@@ -20,8 +20,8 @@
 #SBATCH --nodes=1
 
 cd /Accounts/caldwelll/TemporalEnvironments2026/Data/26_6_29
-mkdir parasites_changing
-cd parasites_changing
+mkdir run_parasites_changing
+cd run_parasites_changing
 
 mkdir ${SLURM_ARRAY_TASK_ID}
 cd ${SLURM_ARRAY_TASK_ID}
