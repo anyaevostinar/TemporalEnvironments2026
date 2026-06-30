@@ -31,7 +31,7 @@ cp /Accounts/caldwelll/TemporalEnvironments2026/Data/26_6_29/flat-reward-1-env.j
 cp /Accounts/caldwelll/TemporalEnvironments2026/SymbulationEmp/symbulation_sgp .
 
 ## THIS IS AN EXAMPLE, UPDATE TO CORRECT THINGS
-args=" -START_MOI 1 -FILE_NAME _YOUR_TREAMENT"
+args=" -START_MOI 1"
 ./symbulation_sgp $args -SEED ${SLURM_ARRAY_TASK_ID} > run.log
 
 ## Run with sbatch -p facultynode --nodelist=edmonstone2024,margulis2024,carver,lederberg run-parasites-changing.sh

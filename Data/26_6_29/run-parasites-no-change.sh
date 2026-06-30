@@ -19,18 +19,19 @@
 
 #SBATCH --nodes=1
 
-cd /Accounts/YOUR_USERNAME/YOUR_GIT_REPO/Data/TODAY_DATE_YOUR_EXPERIMENT_FOLDER
-mkdir YOUR_TREATMENT_NAME
-cd YOUR_TREATMENT_NAME
+cd /Accounts/caldwelll/TemporalEnvironments2026/Data/26_6_29
+mkdir run-parasites-no-change
+cd run-parasites-no-change
 
 mkdir ${SLURM_ARRAY_TASK_ID}
 cd ${SLURM_ARRAY_TASK_ID}
 
-cp /Accounts/YOUR_USERNAME/YOUR_GIT_REPO/Data/TODAY_DATE_YOUR_EXPERIMENT_FOLDER/SymSettings.cfg .
-cp /Accounts/YOUR_USERNAME/YOUR_GIT_REPO/SymbulationEmp/symbulation_sgp .
+cp /Accounts/caldwelll/TemporalEnvironments2026/Data/26_6_29/SymSettings.cfg .
+cp /Accounts/caldwelll/TemporalEnvironments2026/Data/26_6_29/flat-reward-1-env.json .
+cp /Accounts/caldwelll/TemporalEnvironments2026/SymbulationEmp/symbulation_sgp .
 
 ## THIS IS AN EXAMPLE, UPDATE TO CORRECT THINGS
-args=" -START_MOI 1 -FILE_NAME _YOUR_TREAMENT -ENABLE_TEMP_CHANGING_ENVIRONMENT false"
+args=" -START_MOI 1  -ENABLE_TEMP_CHANGING_ENVIRONMENT false"
 ./symbulation_sgp $args -SEED ${SLURM_ARRAY_TASK_ID} > run.log
 
 ## Run with sbatch -p facultynode --nodelist=edmonstone2024,margulis2024,carver,lederberg run-parasites-no-change.sh
