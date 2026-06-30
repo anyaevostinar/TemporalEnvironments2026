@@ -8,8 +8,8 @@
 #SBATCH --mail-user=does_not_work@carleton.edu
 
 ## Job name settings (These do matter, so UPDATE THEM)
-#SBATCH --job-name=npp
-#SBATCH -o npp%A_%a.out
+#SBATCH --job-name=n0
+#SBATCH -o n0%A_%a.out
 
 ## Memory requirement in megabytes. You might need to make this bigger.
 #SBATCH --mem-per-cpu=2000M
@@ -19,19 +19,18 @@
 
 #SBATCH --nodes=1
 
-cd /Accounts/caldwelll/TemporalEnvironments2026/Data/26_6_30_rpc
-mkdir run_parasites_changing
-cd run_parasites_changing
+cd /Accounts/caldwelll/TemporalEnvironments2026/Data/26_6_30_rnc
+mkdir run_nosyms
+cd run_nosyms
 
 mkdir ${SLURM_ARRAY_TASK_ID}
 cd ${SLURM_ARRAY_TASK_ID}
 
-cp /Accounts/caldwelll/TemporalEnvironments2026/Data/26_6_30_rpc/SymSettings.cfg .
-cp /Accounts/caldwelll/TemporalEnvironments2026/Data/26_6_30_rpc/flat-reward-1-env.json .
+cp /Accounts/caldwelll/TemporalEnvironments2026/Data/26_6_30_rnc/SymSettings.cfg .
+cp /Accounts/caldwelll/TemporalEnvironments2026/Data/26_6_30_rnc/flat-reward-1-env.json .
 cp /Accounts/caldwelll/TemporalEnvironments2026/SymbulationEmp/symbulation_sgp .
 
-## THIS IS AN EXAMPLE, UPDATE TO CORRECT THINGS
-args=" -START_MOI 1"
+args=" -START_MOI 0 -ENABLE_TEMP_CHANGING_ENVIRONMENT true -TEMP_CHANGING_ENVIORNMENT_ORG_TYPE plastic-both"
 ./symbulation_sgp $args -SEED ${SLURM_ARRAY_TASK_ID} > run.log
 
-## Run with sbatch -p facultynode --nodelist=edmonstone2024,margulis2024,carver,lederberg run-parasites-changing.sh
+## Run with sbatch -p facultynode --nodelist=edmonstone2024,margulis2024,carver,lederberg run-nosyms-changing.sh
