@@ -12,7 +12,7 @@
 #SBATCH -o n0%A_%a.out
 
 ## Memory requirement in megabytes. You might need to make this bigger.
-#SBATCH --mem-per-cpu=1000M
+#SBATCH --mem-per-cpu=2000M
 
 ## Launch an array of jobs. This determines your random seeds
 #SBATCH --array=100-129
@@ -30,7 +30,7 @@ cp /Accounts/caldwelll/TemporalEnvironments2026/Data/26_6_29/SymSettings.cfg .
 cp /Accounts/caldwelll/TemporalEnvironments2026/Data/26_6_29/flat-reward-1-env.json .
 cp /Accounts/caldwelll/TemporalEnvironments2026/SymbulationEmp/symbulation_sgp .
 
-args=" -START_MOI 0 -ENABLE_TEMP_CHANGING_ENVIRONMENT true -TEMP_CHANGING_ORG_TYPE plastic-both"
+args=" -START_MOI 0 -ENABLE_TEMP_CHANGING_ENVIRONMENT true -TEMP_CHANGING_ENVIORNMENT_ORG_TYPE plastic-both"
 ./symbulation_sgp $args -SEED ${SLURM_ARRAY_TASK_ID} > run.log
 
 ## Run with sbatch -p facultynode --nodelist=edmonstone2024,margulis2024,carver,lederberg run-nosyms-changing.sh
