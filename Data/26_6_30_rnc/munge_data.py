@@ -1,7 +1,7 @@
 import os.path
 import gzip
 
-folder = '../../../Data/26_6_30_rnc'
+folder = '../../Data/26_6_30_rnc'
 
 treatment_folders = ["run-parasites-no-change"]
 reps = range(100,130)
@@ -16,7 +16,7 @@ outFile.write(header)
 
 for t in treatment_folders:
     for r in reps:
-        fname = folder + "/"+t+"/" + str(r) + "/Tasks_data.csv"
+        fname = folder + "/"+t+"/" + str(r) + "output/Tasks_data.csv"
         uid = t + "_" + str(r)
         curFile = open(fname, 'r')
         for line in curFile:
