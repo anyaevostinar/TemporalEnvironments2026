@@ -22,8 +22,8 @@
 #SBATCH --ntasks-per-node=29
 
 cd /Accounts/caldwelll/TemporalEnvironments2026/Data/26_6_30_rpnc
-mkdir run-parasites-no-change
-cd run-parasites-no-change
+mkdir run-parasites-no-change2
+cd run-parasites-no-change2
 
 mkdir ${SLURM_ARRAY_TASK_ID}
 cd ${SLURM_ARRAY_TASK_ID}
