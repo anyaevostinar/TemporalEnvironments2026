@@ -19,6 +19,8 @@
 
 #SBATCH --nodes=1
 
+#SBATCH --ntasks-per-node=29
+
 cd /Accounts/caldwelll/TemporalEnvironments2026/Data/26_6_30_rpnc
 mkdir run-parasites-no-change
 cd run-parasites-no-change
