@@ -19,7 +19,7 @@
 
 #SBATCH --nodes=1
 
-#SBATCH --ntasks-per-node=29
+
 
 cd /Accounts/caldwelll/TemporalEnvironments2026/Data/26_6_30_rpc
 mkdir run_parasites_changing
