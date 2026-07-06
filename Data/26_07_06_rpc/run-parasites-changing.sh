@@ -33,7 +33,7 @@ cp /Accounts/caldwelll/TemporalEnvironments2026/Data/26_6_30_rpc/flat-reward-1-e
 cp /Accounts/caldwelll/TemporalEnvironments2026/SymbulationEmp/symbulation_sgp .
 
 ## THIS IS AN EXAMPLE, UPDATE TO CORRECT THINGS
-args=" -START_MOI 1 -ENABLE_TEMP_CHANGING_ENVIRONMENT true -TEMP_CHANGING_ENVIRONMENT_ORG_TYPE plastic-both" ##changing env not enabled?
+args=" -START_MOI 1 -ENABLE_TEMP_CHANGING_ENVIRONMENT 1 -TEMP_CHANGING_ENVIRONMENT_ORG_TYPE plastic-both" ##changing env not enabled?
 ./symbulation_sgp $args -SEED ${SLURM_ARRAY_TASK_ID} > run.log
 
 ## Run with sbatch -p facultynode --nodelist=edmonstone2024,margulis2024,carver,lederberg run-parasites-changing.sh

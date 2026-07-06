@@ -31,7 +31,7 @@ cp /Accounts/caldwelll/TemporalEnvironments2026/Data/26_6_30_rnc/SymSettings.cfg
 cp /Accounts/caldwelll/TemporalEnvironments2026/Data/26_6_30_rnc/flat-reward-1-env.json .
 cp /Accounts/caldwelll/TemporalEnvironments2026/SymbulationEmp/symbulation_sgp .
 
-args=" -START_MOI 0 -ENABLE_TEMP_CHANGING_ENVIRONMENT true -TEMP_CHANGING_ENVIRONMENT_ORG_TYPE plastic-both"
+args=" -START_MOI 0 -ENABLE_TEMP_CHANGING_ENVIRONMENT 1 -TEMP_CHANGING_ENVIRONMENT_ORG_TYPE plastic-both"
 ./symbulation_sgp $args -SEED ${SLURM_ARRAY_TASK_ID} > run.log
 
 ## Run with sbatch -p facultynode --nodelist=edmonstone2024,margulis2024,carver,lederberg run-nosyms-changing.sh
