@@ -8,8 +8,8 @@
 #SBATCH --mail-user=does_not_work@carleton.edu
 
 ## Job name settings (These do matter, so UPDATE THEM)
-#SBATCH --job-name=n0
-#SBATCH -o n0%A_%a.out
+#SBATCH --job-name=rnc
+#SBATCH -o rnc%A_%a.out
 
 ## Memory requirement in megabytes. You might need to make this bigger.
 #SBATCH --mem-per-cpu=2000M
@@ -20,15 +20,15 @@
 #SBATCH --nodes=1
 
 
-cd /Accounts/caldwelll/TemporalEnvironments2026/Data/26_6_30_rnc
+cd /Accounts/caldwelll/TemporalEnvironments2026/Data/26_07_06_rnc
 mkdir run_nosyms
 cd run_nosyms
 
 mkdir ${SLURM_ARRAY_TASK_ID}
 cd ${SLURM_ARRAY_TASK_ID}
 
-cp /Accounts/caldwelll/TemporalEnvironments2026/Data/26_6_30_rnc/SymSettings.cfg .
-cp /Accounts/caldwelll/TemporalEnvironments2026/Data/26_6_30_rnc/flat-reward-1-env.json .
+cp /Accounts/caldwelll/TemporalEnvironments2026/Data/26_07_06_rnc/SymSettings.cfg .
+cp /Accounts/caldwelll/TemporalEnvironments2026/Data/26_07_06_rnc/flat-reward-1-env.json .
 cp /Accounts/caldwelll/TemporalEnvironments2026/SymbulationEmp/symbulation_sgp .
 
 args=" -START_MOI 0 -ENABLE_TEMP_CHANGING_ENVIRONMENT 1 -TEMP_CHANGING_ENVIRONMENT_ORG_TYPE plastic-both"
