@@ -3,7 +3,7 @@ import gzip
 
 folder = '../../Data/26_07_06_rnc'
 
-treatment_folders = ["run-parasites-no-change"]
+treatment_folders = ["run_nosyms"]
 reps = range(100,130)
 header = "uid treatment rep update task task_count partner\n"
 task_names = {1:"NAND", 2:"NOT", 3:"OR_NOT", 4:"AND", 5:"OR", 6:"AND_NOT", 
