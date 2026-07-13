@@ -1,7 +1,7 @@
 import os.path
 import gzip
 
-folder = '../../Data/26_07_06_rnc'
+folder = '../../Data/26_07_10_rnc_90_interval'
 
 treatment_folders = ["run_nosyms"]
 reps = range(100,130)
