@@ -20,15 +20,15 @@
 #SBATCH --nodes=1
 
 
-cd /Accounts/caldwelll/TemporalEnvironments2026/Data/26_07_06_rnc
+cd /Accounts/caldwelll/TemporalEnvironments2026/Data/26_07_10_rnc_90_interval
 mkdir run_nosyms
 cd run_nosyms
 
 mkdir ${SLURM_ARRAY_TASK_ID}
 cd ${SLURM_ARRAY_TASK_ID}
 
-cp /Accounts/caldwelll/TemporalEnvironments2026/Data/26_07_06_rnc/SymSettings.cfg .
-cp /Accounts/caldwelll/TemporalEnvironments2026/Data/26_07_06_rnc/flat-reward-1-env.json .
+cp /Accounts/caldwelll/TemporalEnvironments2026/Data/26_07_10_rnc_90_interval/SymSettings.cfg .
+cp /Accounts/caldwelll/TemporalEnvironments2026/Data/26_07_10_rnc_90_interval/flat-reward-1-env.json .
 cp /Accounts/caldwelll/TemporalEnvironments2026/SymbulationEmp/symbulation_sgp .
 
 args=" -START_MOI 0 -ENABLE_TEMP_CHANGING_ENVIRONMENT 1 -TEMP_CHANGING_ENVIRONMENT_ORG_TYPE plastic-both"
