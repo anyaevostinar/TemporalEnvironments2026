@@ -30,18 +30,18 @@ for t in treatment_folders:
                 splitline = line.strip().split(',')
 
                 for task in range(1,10): # nine logic tasks
-                    if ((task_names[task]=="AND") or (task_names[task] == "OR") or task_names[task] == "NOT"):
+                    if (task_names[task] in ("AND", "OR", "NOT")):
                         poison_or_not = poison
-                    elif ((task_names[task]=="NAND") or (task_names[task] == "OR_NOT") or task_names[task] == "AND_NOT"):
+                    elif (task_names[task] in ("NAND", "OR_NOT", "AND_NOT")):
                         poison_or_not = reward
                     else:
                         poison_or_not = neutral
                     outstring1 = "{} {} {} {} {} {} {} {}\n".format(uid, t, r, splitline[0], task_names[task], splitline[task], poison_or_not, "Host")
                     outFile.write(outstring1)
                 for task in range(10,19): # nine logic tasks
-                    if ((task_names[task]=="AND") or (task_names[task] == "OR") or task_names[task] == "NOT"):
+                    if (task_names[task-9] in ("AND", "OR", "NOT")):
                         poison_or_not = poison
-                    elif ((task_names[task]=="NAND") or (task_names[task] == "OR_NOT") or task_names[task] == "AND_NOT"):
+                    elif (task_names[task-9] in ("NAND", "OR_NOT", "AND_NOT")):
                         poison_or_not = reward
                     else:
                         poison_or_not = neutral
