@@ -48,7 +48,7 @@ for t in treatment_folders:
                     outstring1 = "{} {} {} {} {} {} {} {}\n".format(uid, t, r, splitline[0], task_names[task-9], splitline[task], poison_or_not, "Sym")
                     outFile.write(outstring1)
             
-                if (int(splitline[0]) % 1000 == 0):
+                if ((int(splitline[0]) % 1000 == 0) and (int(splitline[0]!= 0))):
                     reward, poison = poison, reward
         poison = -1
         neutral = 0
