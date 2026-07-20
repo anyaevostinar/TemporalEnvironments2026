@@ -1,7 +1,7 @@
 import os.path
 import gzip
 
-folder = '../../Data/26_07_13_mut_interval_5000'
+folder = '../../Data/26_07_17_mut_interval_5000'
 
 treatment_folders = ["run_parasites_changing"]
 reps = range(100,130)
@@ -48,9 +48,11 @@ for t in treatment_folders:
                     outstring1 = "{} {} {} {} {} {} {} {}\n".format(uid, t, r, splitline[0], task_names[task-9], splitline[task], poison_or_not, "Sym")
                     outFile.write(outstring1)
             
-                if (int(splitline[0]) % 5000 == 0):
+                if ((int(splitline[0]) % 5000 == 0) and (int(splitline[0])!= 0)):
                     reward, poison = poison, reward
-            
+        poison = -1
+        neutral = 0
+        reward = 1    
             
         curFile.close()
 outFile.close()
