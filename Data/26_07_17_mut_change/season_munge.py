@@ -50,7 +50,9 @@ for t in treatment_folders:
             
                 if (int(splitline[0]) % 1000 == 0):
                     reward, poison = poison, reward
-            
+        poison = -1
+        neutral = 0
+        reward = 1    
             
         curFile.close()
 outFile.close()
