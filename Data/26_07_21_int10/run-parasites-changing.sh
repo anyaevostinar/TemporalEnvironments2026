@@ -8,8 +8,8 @@
 #SBATCH --mail-user=does_not_work@carleton.edu
 
 ## Job name settings (These do matter, so UPDATE THEM)
-#SBATCH --job-name=c2
-#SBATCH -o c2%A_%a.out
+#SBATCH --job-name=c10
+#SBATCH -o c10%A_%a.out
 
 ## Memory requirement in megabytes. You might need to make this bigger.
 #SBATCH --mem-per-cpu=2000M
@@ -21,15 +21,15 @@
 
 
 
-cd /Accounts/caldwelll/TemporalEnvironments2026/Data/26_07_20_para_int2
+cd /Accounts/caldwelll/TemporalEnvironments2026/Data/26_07_21_int10
 mkdir run_parasites_changing
 cd run_parasites_changing
 
 mkdir ${SLURM_ARRAY_TASK_ID}
 cd ${SLURM_ARRAY_TASK_ID}
 
-cp /Accounts/caldwelll/TemporalEnvironments2026/Data/26_07_20_para_int2/SymSettings.cfg .
-cp /Accounts/caldwelll/TemporalEnvironments2026/Data/26_07_20_para_int2/flat-reward-1-env.json .
+cp /Accounts/caldwelll/TemporalEnvironments2026/Data/26_07_21_int10/SymSettings.cfg .
+cp /Accounts/caldwelll/TemporalEnvironments2026/Data/26_07_21_int10/flat-reward-1-env.json .
 cp /Accounts/caldwelll/TemporalEnvironments2026/SymbulationEmp/symbulation_sgp .
 
 ## THIS IS AN EXAMPLE, UPDATE TO CORRECT THINGS
