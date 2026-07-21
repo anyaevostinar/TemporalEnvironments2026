@@ -1,7 +1,7 @@
 import os.path
 import gzip
 
-folder = '../../Data/26_07_17_changing_noPara'
+folder = '../../Data/26_07_20_changing_noPara'
 
 treatment_folders = ["run_parasites_changing"]
 reps = range(100,130)
