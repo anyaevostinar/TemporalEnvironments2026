@@ -4,7 +4,7 @@ import gzip
 folder = '../../Data/26_07_21_int10'
 
 treatment_folders = ["run_parasites_changing"]
-reps = range(100,130)
+reps = range(100,106)
 header = "uid treatment rep update task task_count poison_or_not partner\n"
 task_names = {1:"NAND", 2:"NOT", 3:"OR_NOT", 4:"AND", 5:"OR", 6:"AND_NOT", 
     7:"NOR", 8:"XOR", 9:"EQU"}
