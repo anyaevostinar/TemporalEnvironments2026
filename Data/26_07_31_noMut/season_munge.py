@@ -21,7 +21,7 @@ poison_or_not = 0
 
 for t in treatment_folders:
     for r in reps:
-        fname = folder + "/"+t+"/" + str(r) + "/output/Tasks_data.csv"
+        fname = folder + "/"+t+"/" + str(r) + "/mut_int250_seed103/Tasks_data.csv"
         uid = t + "_" + str(r)
         curFile = open(fname, 'r')
         for line in curFile:
