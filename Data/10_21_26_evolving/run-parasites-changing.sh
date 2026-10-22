@@ -21,19 +21,19 @@
 
 
 
-cd /Accounts/caldwelll/TemporalEnvironments2026/Data/26_08_04_mut_noenv
+cd /Accounts/caldwelll/TemporalEnvironments2026/Data/10_21_26_evolving
 mkdir run_parasites_changing
 cd run_parasites_changing
 
 mkdir ${SLURM_ARRAY_TASK_ID}
 cd ${SLURM_ARRAY_TASK_ID}
 
-cp /Accounts/caldwelll/TemporalEnvironments2026/Data/26_08_04_mut_noenv/SymSettings.cfg .
-cp /Accounts/caldwelll/TemporalEnvironments2026/Data/26_08_04_mut_noenv/flat-reward-1-env.json .
+cp /Accounts/caldwelll/TemporalEnvironments2026/Data/10_21_26_evolving/SymSettings.cfg .
+cp /Accounts/caldwelll/TemporalEnvironments2026/Data/10_21_26_evolving/flat-reward-1-env.json .
 cp /Accounts/caldwelll/TemporalEnvironments2026/SymbulationEmp/symbulation_sgp .
 
 ## THIS IS AN EXAMPLE, UPDATE TO CORRECT THINGS
-args="-ENABLE_TEMP_CHANGING_ENVIRONMENT 0" ##changing env not enabled?
+args="-ENABLE_NUTRIENT 1" ##changing env not enabled?
 ./symbulation_sgp $args -SEED ${SLURM_ARRAY_TASK_ID} > run.log
 
 ## Run with sbatch -p facultynode --nodelist=edmonstone2024,margulis2024,carver,lederberg run-parasites-changing.sh
