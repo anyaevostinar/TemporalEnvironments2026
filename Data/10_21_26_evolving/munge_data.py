@@ -1,7 +1,7 @@
 import os.path
 import gzip
 
-folder = '../../Data/26_07_06_rpc'
+folder = '../../Data/10_21_26_evolving'
 
 treatment_folders = ["run_parasites_changing"]
 reps = range(100,130)
@@ -22,11 +22,17 @@ for t in treatment_folders:
         for line in curFile:
             if (line[0] != "u"):
                 splitline = line.strip().split(',')
-                for task in range(1,10): # nine logic tasks
-                    outstring1 = "{} {} {} {} {} {} {}\n".format(uid, t, r, splitline[0], task_names[task], splitline[task], "Host")
+                for task in range(1,11): # nine logic tasks
+                    outstring1 = "{} {} {} {} {} {} {}\n".format(uid, t, r, splitline[0], task_names[task], splitline[task], "horiz_attempt")
                     outFile.write(outstring1)
-                for task in range(10,19): # nine logic tasks
-                    outstring1 = "{} {} {} {} {} {} {}\n".format(uid, t, r, splitline[0], task_names[task-9], splitline[task], "Sym")
+                for task in range(11,21): # nine logic tasks
+                    outstring1 = "{} {} {} {} {} {} {}\n".format(uid, t, r, splitline[0], task_names[task-9], splitline[task], "horiz_success")
+                    outFile.write(outstring1)
+                for task in range(21,31): # nine logic tasks
+                    outstring1 = "{} {} {} {} {} {} {}\n".format(uid, t, r, splitline[0], task_names[task], splitline[task], "vert_attempt")
+                    outFile.write(outstring1)
+                for task in range(31,40): # nine logic tasks
+                    outstring1 = "{} {} {} {} {} {} {}\n".format(uid, t, r, splitline[0], task_names[task-9], splitline[task], "vert_success")
                     outFile.write(outstring1)
         curFile.close()
 outFile.close()
