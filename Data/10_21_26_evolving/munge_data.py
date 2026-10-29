@@ -25,14 +25,18 @@ for t in treatment_folders:
                 for task in range(1,11): # nine logic tasks
                     outstring1 = "{} {} {} {} {} {} {}\n".format(uid, t, r, splitline[0], task, splitline[task], "horiz_attempt")
                     outFile.write(outstring1)
+                    print(task)
                 for task in range(11,21): # nine logic tasks
                     outstring1 = "{} {} {} {} {} {} {}\n".format(uid, t, r, splitline[0], task, splitline[task], "horiz_success")
                     outFile.write(outstring1)
+                    print(task)
                 for task in range(21,31): # nine logic tasks
                     outstring1 = "{} {} {} {} {} {} {}\n".format(uid, t, r, splitline[0],task, splitline[task], "vert_attempt")
                     outFile.write(outstring1)
-                for task in range(31,40): # nine logic tasks
+                    print(task)
+                for task in range(31,41): # nine logic tasks
                     outstring1 = "{} {} {} {} {} {} {}\n".format(uid, t, r, splitline[0], task, splitline[task], "vert_success")
                     outFile.write(outstring1)
+                    print(task)
         curFile.close()
 outFile.close()
