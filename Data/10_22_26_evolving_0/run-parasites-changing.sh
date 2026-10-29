@@ -21,15 +21,15 @@
 
 
 
-cd /Accounts/caldwelll/TemporalEnvironments2026/Data/10_22_26_evolving_1
+cd /Accounts/caldwelll/TemporalEnvironments2026/Data/10_22_26_evolving_0
 mkdir run_parasites_changing
 cd run_parasites_changing
 
 mkdir ${SLURM_ARRAY_TASK_ID}
 cd ${SLURM_ARRAY_TASK_ID}
 
-cp /Accounts/caldwelll/TemporalEnvironments2026/Data/10_22_26_evolving_1/SymSettings.cfg .
-cp /Accounts/caldwelll/TemporalEnvironments2026/Data/10_22_26_evolving_1/flat-reward-1-env.json .
+cp /Accounts/caldwelll/TemporalEnvironments2026/Data/10_22_26_evolving_0/SymSettings.cfg .
+cp /Accounts/caldwelll/TemporalEnvironments2026/Data/10_22_26_evolving_0/flat-reward-1-env.json .
 cp /Accounts/caldwelll/TemporalEnvironments2026/SymbulationEmp/symbulation_sgp .
 
 ## THIS IS AN EXAMPLE, UPDATE TO CORRECT THINGS
