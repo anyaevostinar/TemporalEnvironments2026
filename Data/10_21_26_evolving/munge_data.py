@@ -23,16 +23,16 @@ for t in treatment_folders:
             if (line[0] != "u"):
                 splitline = line.strip().split(',')
                 for task in range(1,11): # nine logic tasks
-                    outstring1 = "{} {} {} {} {} {} {}\n".format(uid, t, r, splitline[0], task_names[task], splitline[task], "horiz_attempt")
+                    outstring1 = "{} {} {} {} {} {} {}\n".format(uid, t, r, splitline[0], task, splitline[task], "horiz_attempt")
                     outFile.write(outstring1)
                 for task in range(11,21): # nine logic tasks
-                    outstring1 = "{} {} {} {} {} {} {}\n".format(uid, t, r, splitline[0], task_names[task-9], splitline[task], "horiz_success")
+                    outstring1 = "{} {} {} {} {} {} {}\n".format(uid, t, r, splitline[0], task, splitline[task], "horiz_success")
                     outFile.write(outstring1)
                 for task in range(21,31): # nine logic tasks
-                    outstring1 = "{} {} {} {} {} {} {}\n".format(uid, t, r, splitline[0], task_names[task], splitline[task], "vert_attempt")
+                    outstring1 = "{} {} {} {} {} {} {}\n".format(uid, t, r, splitline[0],task, splitline[task], "vert_attempt")
                     outFile.write(outstring1)
                 for task in range(31,40): # nine logic tasks
-                    outstring1 = "{} {} {} {} {} {} {}\n".format(uid, t, r, splitline[0], task_names[task-9], splitline[task], "vert_success")
+                    outstring1 = "{} {} {} {} {} {} {}\n".format(uid, t, r, splitline[0], task, splitline[task], "vert_success")
                     outFile.write(outstring1)
         curFile.close()
 outFile.close()
